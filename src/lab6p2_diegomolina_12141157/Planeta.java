@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class Planeta {
     private String nomPlaneta;
     private boolean hayAgua;
-    private double tamano;
-    private double temperatura;
+    private int tamano;
+    private int temperatura;
     private ArrayList<Alienigenas> aliens = new ArrayList();
 
     public Planeta() {
     }
 
-    public Planeta(String nomPlaneta, boolean hayAgua, double tamano, double temperatura) {
+    public Planeta(String nomPlaneta, boolean hayAgua, int tamano, int temperatura) {
         this.nomPlaneta = nomPlaneta;
         this.hayAgua = hayAgua;
         this.tamano = tamano;
@@ -48,7 +48,7 @@ public class Planeta {
         return tamano;
     }
 
-    public void setTamano(double tamano) {
+    public void setTamano(int tamano) {
         this.tamano = tamano;
     }
 
@@ -56,7 +56,7 @@ public class Planeta {
         return temperatura;
     }
 
-    public void setTemperatura(double temperatura) {
+    public void setTemperatura(int temperatura) {
         this.temperatura = temperatura;
     }
 
@@ -70,7 +70,7 @@ public class Planeta {
 
     @Override
     public String toString() {
-        return "Planeta{" + "nomPlaneta=" + nomPlaneta + ", hayAgua=" + hayAgua + ", tamano=" + tamano + ", temperatura=" + temperatura + ", aliens=" + aliens + '}';
+        return nomPlaneta;
     }
     
 }
