@@ -7,6 +7,8 @@ package lab6p2_diegomolina_12141157;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +22,7 @@ public class menu extends javax.swing.JFrame {
     public menu() {
         initComponents();
         elementosDefecto();
+        elementosListayComboB();
         this.setExtendedState(MAXIMIZED_BOTH);
     }
     public void elementosDefecto(){
@@ -39,16 +42,24 @@ public class menu extends javax.swing.JFrame {
         Alienigenas d = new Abduzcan(10, "Juan", razas.get(1), 200, true);
         planetas.get(1).getAliens().add(c);
         planetas.get(1).getAliens().add(d);
+        
+    }
+    public void elementosListayComboB(){
         DefaultComboBoxModel dc=
         (DefaultComboBoxModel) cb_pprim.getModel();
         DefaultComboBoxModel dc2=
         (DefaultComboBoxModel) cb_RazaEx.getModel();
+        DefaultListModel modelo = (DefaultListModel) jl_planetasEx.getModel();
         for (Planeta planeta : planetas) {
             dc.addElement(planeta);
         }
         for (Raza raza : razas) {
             dc2.addElement(raza);
         }
+        for (Planeta planeta : planetas) {
+            modelo.addElement(planeta);
+        }
+        jl_pConq.setModel(modelo);
         cb_RazaEx.setModel(dc2);
         cb_pfavEx.setModel(dc);
         cb_razaCaz.setModel(dc2);
@@ -58,6 +69,7 @@ public class menu extends javax.swing.JFrame {
         cb_planetaCaz.setModel(dc);
         cb_planetaConq.setModel(dc);
         cb_planetaAb.setModel(dc);
+        
     }
 
     /**
@@ -304,10 +316,17 @@ public class menu extends javax.swing.JFrame {
 
         jLabel7.setText("Planeta Favorito");
 
+        jl_planetasEx.setModel(new DefaultListModel());
         jScrollPane1.setViewportView(jl_planetasEx);
 
         bt_listaEx.setText("Anadir a Su Lista");
+        bt_listaEx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_listaExActionPerformed(evt);
+            }
+        });
 
+        jl_planetasV.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(jl_planetasV);
 
         jLabel8.setText("Planeta ");
@@ -811,12 +830,16 @@ public class menu extends javax.swing.JFrame {
         planetas.add(new Planeta(nombre, agua, tamano, temperatura));
         DefaultComboBoxModel dc=
         (DefaultComboBoxModel) cb_pprim.getModel();
-        
+        DefaultListModel modelo = (DefaultListModel) jl_planetasEx.getModel();
         dc.removeAllElements();
-        
+        modelo.removeAllElements();
         for (Planeta planeta : planetas) {
             dc.addElement(planeta);
         }
+        for (Planeta planeta : planetas) {
+            modelo.addElement(planeta);
+        }
+        jl_pConq.setModel(modelo);
         cb_pfavEx.setModel(dc);
         cb_planetaEx.setModel(dc);
         cb_planetaCaz.setModel(dc);
@@ -942,6 +965,20 @@ public class menu extends javax.swing.JFrame {
         sp_edadEx.setValue(0);
         rb_amenazaEx.setContentAreaFilled(false);
     }//GEN-LAST:event_bt_guardarConqActionPerformed
+
+    private void bt_listaExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_listaExActionPerformed
+        // TODO add your handling code here:
+        if(jl_planetasEx.getSelectedIndex()>=0){
+            DefaultListModel m1 = (DefaultListModel) jl_planetasEx.getModel();
+            DefaultListModel m2 = (DefaultListModel) jl_planetasV.getModel();
+            m2.addElement(m1.elementAt(jl_planetasEx.getSelectedIndex()));
+            
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Debe de Selecionar un Planeta");
+        }
+    }//GEN-LAST:event_bt_listaExActionPerformed
 
     /**
      * @param args the command line arguments
