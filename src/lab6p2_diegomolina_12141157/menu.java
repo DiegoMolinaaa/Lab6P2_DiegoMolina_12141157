@@ -51,7 +51,13 @@ public class menu extends javax.swing.JFrame {
         }
         cb_RazaEx.setModel(dc2);
         cb_pfavEx.setModel(dc);
+        cb_razaCaz.setModel(dc2);
+        cb_RazaConq.setModel(dc2);
+        cb_razaAb.setModel(dc2);
         cb_planetaEx.setModel(dc);
+        cb_planetaCaz.setModel(dc);
+        cb_planetaConq.setModel(dc);
+        cb_planetaAb.setModel(dc);
     }
 
     /**
@@ -100,8 +106,49 @@ public class menu extends javax.swing.JFrame {
         cb_planetaEx = new javax.swing.JComboBox<>();
         bt_guardarEx = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        tf_nomCaz = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        sp_edadCaz = new javax.swing.JSpinner();
+        rb_amenazaCaz = new javax.swing.JRadioButton();
+        jLabel16 = new javax.swing.JLabel();
+        cb_razaCaz = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        sp_humAp = new javax.swing.JSpinner();
+        bt_guardarCaz = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        cb_planetaCaz = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        tf_nombreConq = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        sp_edadConq = new javax.swing.JSpinner();
+        jLabel26 = new javax.swing.JLabel();
+        cb_RazaConq = new javax.swing.JComboBox<>();
+        rb_amenazaConq = new javax.swing.JRadioButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_pConq = new javax.swing.JList<>();
+        bt_listaConq = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_planetasConq = new javax.swing.JList<>();
+        jLabel28 = new javax.swing.JLabel();
+        cb_planetaConq = new javax.swing.JComboBox<>();
+        bt_guardarConq = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        tf_nomAb = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        sp_edadAb = new javax.swing.JSpinner();
+        rb_amenazaAb = new javax.swing.JRadioButton();
+        jLabel21 = new javax.swing.JLabel();
+        cb_razaAb = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        sp_animAb = new javax.swing.JSpinner();
+        bt_guardarAb = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        cb_planetaAb = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -242,7 +289,7 @@ public class menu extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rb_agua)
                             .addComponent(bt_Planeta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(19, Short.MAX_VALUE))))
+                        .addContainerGap(34, Short.MAX_VALUE))))
         );
 
         jTabbedPane2.addTab("Planetas y Razas", jPanel1);
@@ -365,41 +412,347 @@ public class menu extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Explorador", jPanel2);
 
+        jLabel9.setText("Nombre");
+
+        jLabel15.setText("Edad");
+
+        rb_amenazaCaz.setText("Es Amenaza");
+
+        jLabel16.setText("Raza");
+
+        jLabel17.setText("Humanos Atrapados");
+
+        bt_guardarCaz.setText("Guardar Cazador");
+        bt_guardarCaz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_guardarCazActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Planeta");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel16)
+                        .addGap(194, 194, 194))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_amenazaCaz)
+                        .addGap(124, 124, 124))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(tf_nomCaz, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cb_razaCaz, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(sp_edadCaz, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jLabel17)
+                .addGap(37, 37, 37)
+                .addComponent(sp_humAp, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(bt_guardarCaz, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(cb_planetaCaz, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel16))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_nomCaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_razaCaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(rb_amenazaCaz))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(sp_edadCaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sp_humAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel18)
+                .addGap(9, 9, 9)
+                .addComponent(cb_planetaCaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(bt_guardarCaz)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Cazador", jPanel3);
+
+        jLabel24.setText("Nombre");
+
+        jLabel25.setText("Edad");
+
+        jLabel26.setText("Raza");
+
+        rb_amenazaConq.setText("Es Amenaza");
+
+        jScrollPane3.setViewportView(jl_pConq);
+
+        bt_listaConq.setText("Anadir a Su Lista");
+
+        jScrollPane4.setViewportView(jl_planetasConq);
+
+        jLabel28.setText("Planeta ");
+
+        bt_guardarConq.setText("Guardar Conquistaor");
+        bt_guardarConq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_guardarConqActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tf_nombreConq, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sp_edadConq, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(cb_RazaConq, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(cb_planetaConq, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rb_amenazaConq)
+                                            .addComponent(jLabel26))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(bt_guardarConq)
+                                            .addComponent(jLabel28))
+                                        .addGap(16, 16, 16))))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(bt_listaConq)
+                                .addGap(55, 55, 55)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 64, Short.MAX_VALUE)))
+                        .addGap(13, 13, 13))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addGap(39, 507, Short.MAX_VALUE))))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel28))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_nombreConq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_RazaConq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel25))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(cb_planetaConq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sp_edadConq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(rb_amenazaConq)
+                                .addComponent(bt_guardarConq)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_listaConq)
+                        .addGap(94, 94, 94))))
+        );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 554, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 315, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Conquistador", jPanel4);
+
+        jLabel19.setText("Nombre");
+
+        jLabel20.setText("Edad");
+
+        rb_amenazaAb.setText("Es Amenaza");
+
+        jLabel21.setText("Raza");
+
+        jLabel22.setText("Animales Abducidos");
+
+        bt_guardarAb.setText("Guardar Abduzcan");
+        bt_guardarAb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_guardarAbActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("Planeta");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel21)
+                        .addGap(194, 194, 194))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_amenazaAb)
+                        .addGap(124, 124, 124))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(tf_nomAb, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cb_razaAb, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel23)
+                    .addComponent(sp_edadAb, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(37, 37, 37)
+                .addComponent(sp_animAb, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(bt_guardarAb, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(cb_planetaAb, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel21))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_nomAb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_razaAb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(rb_amenazaAb))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(sp_edadAb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sp_animAb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22))))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23)
+                .addGap(9, 9, 9)
+                .addComponent(cb_planetaAb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(bt_guardarAb)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 554, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 315, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Abduzcan", jPanel5);
@@ -412,7 +765,7 @@ public class menu extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 315, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Arbol", jPanel6);
@@ -435,7 +788,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -466,6 +819,9 @@ public class menu extends javax.swing.JFrame {
         }
         cb_pfavEx.setModel(dc);
         cb_planetaEx.setModel(dc);
+        cb_planetaCaz.setModel(dc);
+        cb_planetaConq.setModel(dc);
+        cb_planetaAb.setModel(dc);
         tf_nombre.setText("");
         sp_temp.setValue(0);
         sp_tamano.setValue(0);
@@ -485,6 +841,9 @@ public class menu extends javax.swing.JFrame {
         for (Raza raza : razas) {
             dc2.addElement(raza);
         }
+        cb_RazaConq.setModel(dc2);
+        cb_razaAb.setModel(dc2);
+        cb_razaCaz.setModel(dc2);
     }//GEN-LAST:event_btRazaActionPerformed
 
     private void bt_guardarExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarExActionPerformed
@@ -494,12 +853,95 @@ public class menu extends javax.swing.JFrame {
         Raza r;
         Planeta pFav;
         boolean amenaza;
+        int p;
         nombre = tf_nombreEx.getText();
         edad = (Integer)sp_edadEx.getValue();
         r = (Raza)cb_RazaEx.getSelectedItem();
         pFav = (Planeta)cb_pfavEx.getSelectedItem();
-        
+        if(rb_amenazaEx.isSelected()){
+            amenaza=true;
+        }
+        else{
+            amenaza=false;
+        }
+        p = cb_planetaEx.getSelectedIndex();
+        planetas.get(p).getAliens().add(new Explorador(pFav, nombre, r, edad, amenaza));
+        tf_nombreEx.setText("");
+        sp_edadEx.setValue(0);
+        rb_amenazaEx.setContentAreaFilled(false);
     }//GEN-LAST:event_bt_guardarExActionPerformed
+
+    private void bt_guardarCazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarCazActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        int edad, humAtr, p;
+        boolean amenaza;
+        Raza r;
+        nombre = tf_nomCaz.getText();
+        edad = (Integer)sp_edadCaz.getValue();
+        r = (Raza)cb_razaCaz.getSelectedItem();
+        if(rb_amenazaCaz.isSelected()){
+            amenaza=true;
+        }
+        else{
+            amenaza=false;
+        }
+        humAtr = (Integer)sp_humAp.getValue();
+        p = cb_planetaConq.getSelectedIndex();
+        planetas.get(p).getAliens().add(new Cazador(humAtr, nombre, r, edad, amenaza));
+        tf_nomCaz.setText("");
+        sp_edadCaz.setValue(0);
+        sp_humAp.setValue(0);
+        rb_amenazaCaz.setContentAreaFilled(false);
+        
+    }//GEN-LAST:event_bt_guardarCazActionPerformed
+
+    private void bt_guardarAbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarAbActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        int edad, animAb, p;
+        boolean amenaza;
+        Raza r;
+        nombre = tf_nomAb.getText();
+        edad = (Integer)sp_edadAb.getValue();
+        r = (Raza)cb_razaAb.getSelectedItem();
+        if(rb_amenazaAb.isSelected()){
+            amenaza=true;
+        }
+        else{
+            amenaza=false;
+        }
+        animAb = (Integer)sp_animAb.getValue();
+        p = cb_planetaAb.getSelectedIndex();
+        planetas.get(p).getAliens().add(new Abduzcan(animAb, nombre, r, edad, amenaza));
+        tf_nomAb.setText("");
+        sp_edadAb.setValue(0);
+        sp_animAb.setValue(0);
+        rb_amenazaAb.setContentAreaFilled(false);
+    }//GEN-LAST:event_bt_guardarAbActionPerformed
+
+    private void bt_guardarConqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarConqActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        int edad;
+        Raza r;
+        boolean amenaza;
+        int p;
+        nombre = tf_nombreConq.getText();
+        edad = (Integer)sp_edadConq.getValue();
+        r = (Raza)cb_RazaConq.getSelectedItem();
+        if(rb_amenazaConq.isSelected()){
+            amenaza=true;
+        }
+        else{
+            amenaza=false;
+        }
+        p = cb_planetaConq.getSelectedIndex();
+        planetas.get(p).getAliens().add(new Conquistador(nombre, r, edad, amenaza));
+        tf_nombreEx.setText("");
+        sp_edadEx.setValue(0);
+        rb_amenazaEx.setContentAreaFilled(false);
+    }//GEN-LAST:event_bt_guardarConqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -539,43 +981,84 @@ public class menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btRaza;
     private javax.swing.JButton bt_Planeta;
+    private javax.swing.JButton bt_guardarAb;
+    private javax.swing.JButton bt_guardarCaz;
+    private javax.swing.JButton bt_guardarConq;
     private javax.swing.JButton bt_guardarEx;
+    private javax.swing.JButton bt_listaConq;
     private javax.swing.JButton bt_listaEx;
+    private javax.swing.JComboBox<String> cb_RazaConq;
     private javax.swing.JComboBox<String> cb_RazaEx;
     private javax.swing.JComboBox<String> cb_pfavEx;
+    private javax.swing.JComboBox<String> cb_planetaAb;
+    private javax.swing.JComboBox<String> cb_planetaCaz;
+    private javax.swing.JComboBox<String> cb_planetaConq;
     private javax.swing.JComboBox<String> cb_planetaEx;
     private javax.swing.JComboBox<String> cb_pprim;
+    private javax.swing.JComboBox<String> cb_razaAb;
+    private javax.swing.JComboBox<String> cb_razaCaz;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JList<String> jl_pConq;
+    private javax.swing.JList<String> jl_planetasConq;
     private javax.swing.JList<String> jl_planetasEx;
     private javax.swing.JList<String> jl_planetasV;
     private javax.swing.JRadioButton rb_agua;
+    private javax.swing.JRadioButton rb_amenazaAb;
+    private javax.swing.JRadioButton rb_amenazaCaz;
+    private javax.swing.JRadioButton rb_amenazaConq;
     private javax.swing.JRadioButton rb_amenazaEx;
+    private javax.swing.JSpinner sp_animAb;
+    private javax.swing.JSpinner sp_edadAb;
+    private javax.swing.JSpinner sp_edadCaz;
+    private javax.swing.JSpinner sp_edadConq;
     private javax.swing.JSpinner sp_edadEx;
+    private javax.swing.JSpinner sp_humAp;
     private javax.swing.JSpinner sp_tamano;
     private javax.swing.JSpinner sp_temp;
+    private javax.swing.JTextField tf_nomAb;
+    private javax.swing.JTextField tf_nomCaz;
     private javax.swing.JTextField tf_nomR;
     private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombreConq;
     private javax.swing.JTextField tf_nombreEx;
     // End of variables declaration//GEN-END:variables
 
