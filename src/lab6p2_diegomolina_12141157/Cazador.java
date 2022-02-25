@@ -9,6 +9,30 @@ package lab6p2_diegomolina_12141157;
  *
  * @author diego
  */
-public class Cazador {
+public class Cazador extends Alienigenas {
+    private int humAtrapados;
+
+    public Cazador() {
+        super();
+    }
+
+    public Cazador(int humAtrapados, String nombre, Raza r, int edad, boolean amenaza) {
+        super(nombre, r, edad, amenaza);
+        this.humAtrapados = humAtrapados;
+    }
+
+    public int getHumAtrapados() {
+        return humAtrapados;
+    }
+
+    public void setHumAtrapados(int humAtrapados) {
+        this.humAtrapados = humAtrapados;
+    }
+
+    @Override
+    public String toString() {
+        return "Cazador{" + "humAtrapados=" + humAtrapados + '}';
+    }
+    
     
 }

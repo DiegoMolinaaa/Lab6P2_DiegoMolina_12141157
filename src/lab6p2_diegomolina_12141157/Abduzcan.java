@@ -9,6 +9,30 @@ package lab6p2_diegomolina_12141157;
  *
  * @author diego
  */
-public class Abduzcan {
+public class Abduzcan extends Alienigenas{
+    private int animalesAb;
+
+    public Abduzcan() {
+        super();
+    }
+
+    public Abduzcan(int animalesAb, String nombre, Raza r, int edad, boolean amenaza) {
+        super(nombre, r, edad, amenaza);
+        this.animalesAb = animalesAb;
+    }
+
+    public int getAnimalesAb() {
+        return animalesAb;
+    }
+
+    public void setAnimalesAb(int animalesAb) {
+        this.animalesAb = animalesAb;
+    }
+
+    @Override
+    public String toString() {
+        return "Abduzcan{" + "animalesAb=" + animalesAb + '}';
+    }
+    
     
 }
