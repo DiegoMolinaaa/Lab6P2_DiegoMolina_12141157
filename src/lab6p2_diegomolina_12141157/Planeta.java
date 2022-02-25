@@ -9,13 +9,6 @@ package lab6p2_diegomolina_12141157;
  *
  * @author diego
  */
-public class Lab6P2_DiegoMolina_12141157 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public void main() {
-        // TODO code application logic here
-    }
+public class Planeta {
     
 }
