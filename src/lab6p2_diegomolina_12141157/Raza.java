@@ -39,7 +39,7 @@ public class Raza {
 
     @Override
     public String toString() {
-        return "Raza{" + "pPrimordial=" + pPrimordial + ", nombreRaza=" + nombreRaza + '}';
+        return nombreRaza;
     }
     
 }
