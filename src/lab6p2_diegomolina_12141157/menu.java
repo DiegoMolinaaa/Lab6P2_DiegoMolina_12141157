@@ -536,10 +536,17 @@ public class menu extends javax.swing.JFrame {
 
         rb_amenazaConq.setText("Es Amenaza");
 
+        jl_pConq.setModel(new DefaultListModel());
         jScrollPane3.setViewportView(jl_pConq);
 
         bt_listaConq.setText("Anadir a Su Lista");
+        bt_listaConq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_listaConqActionPerformed(evt);
+            }
+        });
 
+        jl_planetasConq.setModel(new DefaultListModel());
         jScrollPane4.setViewportView(jl_planetasConq);
 
         jLabel28.setText("Planeta ");
@@ -972,13 +979,23 @@ public class menu extends javax.swing.JFrame {
             DefaultListModel m1 = (DefaultListModel) jl_planetasEx.getModel();
             DefaultListModel m2 = (DefaultListModel) jl_planetasV.getModel();
             m2.addElement(m1.elementAt(jl_planetasEx.getSelectedIndex()));
-            
-            
         }
         else{
             JOptionPane.showMessageDialog(null, "Debe de Selecionar un Planeta");
         }
     }//GEN-LAST:event_bt_listaExActionPerformed
+
+    private void bt_listaConqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_listaConqActionPerformed
+        // TODO add your handling code here:
+        if(jl_pConq.getSelectedIndex()>=0){
+            DefaultListModel m1 = (DefaultListModel) jl_pConq.getModel();
+            DefaultListModel m2 = (DefaultListModel) jl_planetasConq.getModel();
+            m2.addElement(m1.elementAt(jl_pConq.getSelectedIndex()));
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Debe de Selecionar un Planeta");
+        }
+    }//GEN-LAST:event_bt_listaConqActionPerformed
 
     /**
      * @param args the command line arguments
