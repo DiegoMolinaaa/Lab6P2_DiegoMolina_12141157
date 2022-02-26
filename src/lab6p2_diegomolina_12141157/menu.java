@@ -11,6 +11,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.MutableTreeNode;
 
 /**
  *
@@ -84,6 +85,10 @@ public class menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pp_funciones = new javax.swing.JPopupMenu();
+        mi_modificar = new javax.swing.JMenuItem();
+        mi_eliminar = new javax.swing.JMenuItem();
+        mi_listar = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -172,6 +177,30 @@ public class menu extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jt_aliens = new javax.swing.JTree();
 
+        mi_modificar.setText("Modificar");
+        mi_modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mi_modificarMouseClicked(evt);
+            }
+        });
+        pp_funciones.add(mi_modificar);
+
+        mi_eliminar.setText("Eliminar");
+        mi_eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mi_eliminarMouseClicked(evt);
+            }
+        });
+        pp_funciones.add(mi_eliminar);
+
+        mi_listar.setText("Listar");
+        mi_listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_listarActionPerformed(evt);
+            }
+        });
+        pp_funciones.add(mi_listar);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -239,14 +268,14 @@ public class menu extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(sp_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(sp_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))))
+                        .addGap(30, 30, 30))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,43 +303,39 @@ public class menu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cb_pprim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)))
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(sp_temp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_nomR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
+                            .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_pprim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sp_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rb_agua)
-                            .addComponent(bt_Planeta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(247, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sp_temp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_nomR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sp_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rb_agua)
+                    .addComponent(bt_Planeta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Planetas y Razas", jPanel1);
@@ -384,9 +409,9 @@ public class menu extends javax.swing.JFrame {
                                                 .addComponent(bt_guardarEx)
                                                 .addGap(16, 16, 16))))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                                .addGap(37, 37, 37)
                                 .addComponent(bt_listaEx)
-                                .addGap(55, 55, 55)
+                                .addGap(49, 49, 49)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -430,12 +455,11 @@ public class menu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bt_listaEx)
-                        .addGap(94, 94, 94))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(bt_listaEx)))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Explorador", jPanel2);
@@ -532,7 +556,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(cb_planetaCaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(bt_guardarCaz)
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Cazador", jPanel3);
@@ -631,7 +655,6 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(cb_planetaConq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -644,7 +667,7 @@ public class menu extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(39, Short.MAX_VALUE))
+                        .addContainerGap(153, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bt_listaConq)
@@ -655,21 +678,20 @@ public class menu extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 566, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
+            .addGap(0, 437, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 23, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Conquistador", jPanel4);
@@ -766,35 +788,35 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(cb_planetaAb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(bt_guardarAb)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 565, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
+            .addGap(0, 437, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addContainerGap()
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(16, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Abduzcan", jPanel5);
 
-        cb_planetas.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb_planetasItemStateChanged(evt);
+        cb_planetas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_planetasActionPerformed(evt);
             }
         });
 
@@ -814,6 +836,7 @@ public class menu extends javax.swing.JFrame {
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Marte");
         treeNode1.add(treeNode2);
         jt_aliens.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt_aliens.setComponentPopupMenu(pp_funciones);
         jScrollPane6.setViewportView(jt_aliens);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -834,10 +857,12 @@ public class menu extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
                         .addComponent(cb_planetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -845,8 +870,8 @@ public class menu extends javax.swing.JFrame {
                                 .addComponent(bt_mover))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(131, Short.MAX_VALUE))
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Arbol", jPanel6);
@@ -868,7 +893,7 @@ public class menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -892,28 +917,47 @@ public class menu extends javax.swing.JFrame {
         planetas.add(new Planeta(nombre, agua, tamano, temperatura));
         DefaultComboBoxModel dc=
         (DefaultComboBoxModel) cb_pprim.getModel();
-        DefaultListModel modelo = (DefaultListModel) jl_planetasEx.getModel();
-        dc.removeAllElements();
-        modelo.removeAllElements();
-        for (Planeta planeta : planetas) {
-            dc.addElement(planeta);
-        }
-        for (Planeta planeta : planetas) {
-            modelo.addElement(planeta);
-        }
-        jl_pConq.setModel(modelo);
-        cb_planetas.setModel(dc);
-        cb_pfavEx.setModel(dc);
-        cb_planetaEx.setModel(dc);
-        cb_planetaCaz.setModel(dc);
-        cb_planetaConq.setModel(dc);
-        cb_planetaAb.setModel(dc);
+        llenadoCB1();
+        llenadoComboBoxes();
+        llenadoListas();
         tf_nombre.setText("");
         sp_temp.setValue(0);
         sp_tamano.setValue(0);
         rb_agua.setContentAreaFilled(false);
     }//GEN-LAST:event_bt_PlanetaActionPerformed
-
+    public void llenadoComboBoxes(){
+        DefaultComboBoxModel dc=
+        (DefaultComboBoxModel) cb_pprim.getModel();
+        dc.removeAllElements();
+        for (Planeta planeta : planetas) {
+            dc.addElement(planeta);
+        }
+        cb_pfavEx.setModel(dc);
+        cb_planetaEx.setModel(dc);
+        cb_planetaCaz.setModel(dc);
+        cb_planetaConq.setModel(dc);
+        cb_planetaAb.setModel(dc);
+        cb_planetas.setModel(dc);
+    }
+    public void llenadoCB1(){
+        DefaultComboBoxModel dc=
+        (DefaultComboBoxModel) cb_pprim.getModel();
+        dc.removeAllElements();
+        for (Planeta planeta : planetas) {
+            dc.addElement(planeta);
+        }
+    }
+    public void llenadoListas(){
+        DefaultListModel modelo = (DefaultListModel) jl_planetasEx.getModel();
+        
+        modelo.removeAllElements();
+        for (Planeta planeta : planetas) {
+            modelo.addElement(planeta);
+        }
+        jl_pConq.setModel(modelo);
+        
+    }
+    
     private void btRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRazaActionPerformed
         // TODO add your handling code here:
         Planeta p;
@@ -1053,7 +1097,91 @@ public class menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_listaConqActionPerformed
 
-    private void cb_planetasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_planetasItemStateChanged
+    private void bt_moverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_moverActionPerformed
+        // TODO add your handling code here:
+        try{
+            if(jl_aliens.getSelectedIndex()>=0){
+                DefaultListModel modelo = (DefaultListModel)jl_aliens.getModel();
+                Alienigenas alien = (Alienigenas)modelo.getElementAt(jl_aliens.getSelectedIndex());
+
+                String tipo;
+                if(alien instanceof Explorador)
+                    tipo = "Explorador";
+                else if(alien instanceof Cazador)
+                    tipo = "Cazador";
+                else if(alien instanceof Conquistador)
+                    tipo = "Conquistador";
+                else
+                    tipo = "Abduzcan";
+
+                DefaultTreeModel model = (DefaultTreeModel)jt_aliens.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)model.getRoot();
+                DefaultMutableTreeNode planeta = (DefaultMutableTreeNode)model.getChild(raiz, cb_planetas.getSelectedIndex());
+                boolean existe = false;
+                if(planeta.getChildCount() > 0){
+                    for (int i = 0; i < planeta.getChildCount(); i++) {
+                        DefaultMutableTreeNode typeNode = (DefaultMutableTreeNode)planeta.getChildAt(i);
+                        if(typeNode.toString().equals(tipo)){
+                            DefaultMutableTreeNode p = new DefaultMutableTreeNode(alien);
+                            typeNode.add(p);
+                            existe = true;
+                        }
+                    }
+                }
+                if(existe==false){
+                    DefaultMutableTreeNode typeNode = new DefaultMutableTreeNode(tipo);
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(alien);
+                    typeNode.add(p);
+                    planeta.add(typeNode);
+                }
+                model.reload();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Debe de Seleccionar un Elemento");
+            }
+        }catch(Exception ex){
+           System.out.println(ex);
+        }
+    }//GEN-LAST:event_bt_moverActionPerformed
+
+    private void mi_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mi_modificarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mi_modificarMouseClicked
+
+    private void mi_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_listarActionPerformed
+        // TODO add your handling code here:
+        try{
+            DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode)jt_aliens.getLastSelectedPathComponent();
+            Alienigenas alien = (Alienigenas)selectedNode.getUserObject();
+            if(alien instanceof Explorador){
+                System.out.println("Edad: "+alien.getEdad()+" Nombre: "+alien.getNombre()+" Raza: "+alien.getR()+ "Planeta Favorito: "+((Explorador) alien).getPlanetaFav()+" Planetas Visitados: "+((Explorador) alien).getpExplorados());
+                
+            }
+            else if(alien instanceof Cazador){
+                System.out.println("Edad: "+alien.getEdad()+" Nombre: "+alien.getNombre()+" Raza: "+alien.getR()+ " Humanos Atrapados: "+((Cazador) alien).getHumAtrapados());
+            }
+            else if(alien instanceof Conquistador){
+                System.out.println("Edad: "+alien.getEdad()+" Nombre: "+alien.getNombre()+" Raza: "+alien.getR()+ "Planetas Conquistados: "+((Conquistador) alien).getpConquistados());
+            }
+            else if(alien instanceof Abduzcan){
+                System.out.println("Edad: "+alien.getEdad()+" Nombre: "+alien.getNombre()+" Raza: "+alien.getR()+ " Animales Atrapados: "+((Abduzcan) alien).getAnimalesAb());
+            }
+        }catch(Exception ex){
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_mi_listarActionPerformed
+
+    private void mi_eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mi_eliminarMouseClicked
+        // TODO add your handling code here:
+        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode)jt_aliens.getLastSelectedPathComponent();
+        Alienigenas alien = (Alienigenas)selectedNode.getUserObject();
+        System.out.println(selectedNode);
+        DefaultTreeModel modelo = (DefaultTreeModel)jt_aliens.getModel();
+        modelo.removeNodeFromParent(((MutableTreeNode)alien));
+        modelo.reload();
+    }//GEN-LAST:event_mi_eliminarMouseClicked
+
+    private void cb_planetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_planetasActionPerformed
         // TODO add your handling code here:
         DefaultListModel modelo = (DefaultListModel) jl_aliens.getModel();
         int num = cb_planetas.getSelectedIndex();
@@ -1066,53 +1194,7 @@ public class menu extends javax.swing.JFrame {
            }
             
         }
-    }//GEN-LAST:event_cb_planetasItemStateChanged
-
-    private void bt_moverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_moverActionPerformed
-        // TODO add your handling code here:
-        try{
-            DefaultListModel modelo = (DefaultListModel)jl_aliens.getModel();
-            Alienigenas alien = (Alienigenas)modelo.getElementAt(jl_aliens.getSelectedIndex());
-
-            String tipo;
-            if(alien instanceof Explorador)
-                tipo = "Explorador";
-            else if(alien instanceof Cazador)
-                tipo = "Cazador";
-            else if(alien instanceof Conquistador)
-                tipo = "Conquistador";
-            else
-                tipo = "Abduzcan";
-
-            DefaultTreeModel model = (DefaultTreeModel)jt_aliens.getModel();
-            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)model.getRoot();
-            DefaultMutableTreeNode planeta = (DefaultMutableTreeNode)model.getChild(raiz, cb_planetas.getSelectedIndex());
-            boolean existe = false;
-            if(planeta.getChildCount() > 0){
-                System.out.println("Entra1");
-                for (int i = 0; i < planeta.getChildCount(); i++) {
-                    System.out.println("Entra2");
-                    DefaultMutableTreeNode typeNode = (DefaultMutableTreeNode)planeta.getChildAt(i);
-                    System.out.println(typeNode.toString());
-                    if(typeNode.toString().equals(tipo)){
-                        System.out.println("Entra3");
-                        DefaultMutableTreeNode p = new DefaultMutableTreeNode(alien);
-                        typeNode.add(p);
-                        existe = true;
-                    }
-                }
-            }
-            if(existe==false){
-                DefaultMutableTreeNode typeNode = new DefaultMutableTreeNode(tipo);
-                DefaultMutableTreeNode p = new DefaultMutableTreeNode(alien);
-                typeNode.add(p);
-                planeta.add(typeNode);
-            }
-            model.reload();
-        }catch(Exception ex){
-           System.out.println(ex);
-        }
-    }//GEN-LAST:event_bt_moverActionPerformed
+    }//GEN-LAST:event_cb_planetasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1218,6 +1300,10 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JList<String> jl_planetasEx;
     private javax.swing.JList<String> jl_planetasV;
     private javax.swing.JTree jt_aliens;
+    private javax.swing.JMenuItem mi_eliminar;
+    private javax.swing.JMenuItem mi_listar;
+    private javax.swing.JMenuItem mi_modificar;
+    private javax.swing.JPopupMenu pp_funciones;
     private javax.swing.JRadioButton rb_agua;
     private javax.swing.JRadioButton rb_amenazaAb;
     private javax.swing.JRadioButton rb_amenazaCaz;
