@@ -42,7 +42,8 @@ public class Explorador extends Alienigenas{
 
     @Override
     public String toString() {
-        return "Explorador{" + "pExplorados=" + pExplorados + ", planetaFav=" + planetaFav + '}';
+        //return "Explorador{"+super.toString() + "pExplorados=" + pExplorados + ", planetaFav=" + planetaFav + '}';
+        return super.getNombre();
     }
     
 }

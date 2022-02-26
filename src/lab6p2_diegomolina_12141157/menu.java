@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -60,6 +62,7 @@ public class menu extends javax.swing.JFrame {
             modelo.addElement(planeta);
         }
         jl_pConq.setModel(modelo);
+        cb_planetas.setModel(dc);
         cb_RazaEx.setModel(dc2);
         cb_pfavEx.setModel(dc);
         cb_razaCaz.setModel(dc2);
@@ -162,6 +165,12 @@ public class menu extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         cb_planetaAb = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
+        cb_planetas = new javax.swing.JComboBox<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jl_aliens = new javax.swing.JList<>();
+        bt_mover = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jt_aliens = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -301,7 +310,7 @@ public class menu extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rb_agua)
                             .addComponent(bt_Planeta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(34, Short.MAX_VALUE))))
+                        .addContainerGap(247, Short.MAX_VALUE))))
         );
 
         jTabbedPane2.addTab("Planetas y Razas", jPanel1);
@@ -523,7 +532,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(cb_planetaCaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(bt_guardarCaz)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Cazador", jPanel3);
@@ -655,7 +664,7 @@ public class menu extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 528, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -773,7 +782,7 @@ public class menu extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 528, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -783,15 +792,61 @@ public class menu extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Abduzcan", jPanel5);
 
+        cb_planetas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_planetasItemStateChanged(evt);
+            }
+        });
+
+        jl_aliens.setModel(new DefaultListModel());
+        jScrollPane5.setViewportView(jl_aliens);
+
+        bt_mover.setText("Mover");
+        bt_mover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_moverActionPerformed(evt);
+            }
+        });
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Root");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Jupiter");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Marte");
+        treeNode1.add(treeNode2);
+        jt_aliens.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane6.setViewportView(jt_aliens);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(cb_planetas, 0, 124, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_mover)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(cb_planetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(bt_mover))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Arbol", jPanel6);
@@ -814,7 +869,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -847,6 +902,7 @@ public class menu extends javax.swing.JFrame {
             modelo.addElement(planeta);
         }
         jl_pConq.setModel(modelo);
+        cb_planetas.setModel(dc);
         cb_pfavEx.setModel(dc);
         cb_planetaEx.setModel(dc);
         cb_planetaCaz.setModel(dc);
@@ -997,6 +1053,67 @@ public class menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_listaConqActionPerformed
 
+    private void cb_planetasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_planetasItemStateChanged
+        // TODO add your handling code here:
+        DefaultListModel modelo = (DefaultListModel) jl_aliens.getModel();
+        int num = cb_planetas.getSelectedIndex();
+        for (Alienigenas object : planetas.get(num).getAliens()) {
+           if(modelo.contains(object)){
+               continue;
+           } 
+           else{
+               modelo.addElement(object);
+           }
+            
+        }
+    }//GEN-LAST:event_cb_planetasItemStateChanged
+
+    private void bt_moverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_moverActionPerformed
+        // TODO add your handling code here:
+        try{
+            DefaultListModel modelo = (DefaultListModel)jl_aliens.getModel();
+            Alienigenas alien = (Alienigenas)modelo.getElementAt(jl_aliens.getSelectedIndex());
+
+            String tipo;
+            if(alien instanceof Explorador)
+                tipo = "Explorador";
+            else if(alien instanceof Cazador)
+                tipo = "Cazador";
+            else if(alien instanceof Conquistador)
+                tipo = "Conquistador";
+            else
+                tipo = "Abduzcan";
+
+            DefaultTreeModel model = (DefaultTreeModel)jt_aliens.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)model.getRoot();
+            DefaultMutableTreeNode planeta = (DefaultMutableTreeNode)model.getChild(raiz, cb_planetas.getSelectedIndex());
+            boolean existe = false;
+            if(planeta.getChildCount() > 0){
+                System.out.println("Entra1");
+                for (int i = 0; i < planeta.getChildCount(); i++) {
+                    System.out.println("Entra2");
+                    DefaultMutableTreeNode typeNode = (DefaultMutableTreeNode)planeta.getChildAt(i);
+                    System.out.println(typeNode.toString());
+                    if(typeNode.toString().equals(tipo)){
+                        System.out.println("Entra3");
+                        DefaultMutableTreeNode p = new DefaultMutableTreeNode(alien);
+                        typeNode.add(p);
+                        existe = true;
+                    }
+                }
+            }
+            if(existe==false){
+                DefaultMutableTreeNode typeNode = new DefaultMutableTreeNode(tipo);
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(alien);
+                typeNode.add(p);
+                planeta.add(typeNode);
+            }
+            model.reload();
+        }catch(Exception ex){
+           System.out.println(ex);
+        }
+    }//GEN-LAST:event_bt_moverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1041,6 +1158,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JButton bt_guardarEx;
     private javax.swing.JButton bt_listaConq;
     private javax.swing.JButton bt_listaEx;
+    private javax.swing.JButton bt_mover;
     private javax.swing.JComboBox<String> cb_RazaConq;
     private javax.swing.JComboBox<String> cb_RazaEx;
     private javax.swing.JComboBox<String> cb_pfavEx;
@@ -1048,6 +1166,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_planetaCaz;
     private javax.swing.JComboBox<String> cb_planetaConq;
     private javax.swing.JComboBox<String> cb_planetaEx;
+    private javax.swing.JComboBox<String> cb_planetas;
     private javax.swing.JComboBox<String> cb_pprim;
     private javax.swing.JComboBox<String> cb_razaAb;
     private javax.swing.JComboBox<String> cb_razaCaz;
@@ -1090,11 +1209,15 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JList<String> jl_aliens;
     private javax.swing.JList<String> jl_pConq;
     private javax.swing.JList<String> jl_planetasConq;
     private javax.swing.JList<String> jl_planetasEx;
     private javax.swing.JList<String> jl_planetasV;
+    private javax.swing.JTree jt_aliens;
     private javax.swing.JRadioButton rb_agua;
     private javax.swing.JRadioButton rb_amenazaAb;
     private javax.swing.JRadioButton rb_amenazaCaz;

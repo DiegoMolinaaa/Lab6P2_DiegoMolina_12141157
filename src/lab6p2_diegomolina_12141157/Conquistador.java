@@ -32,7 +32,8 @@ public class Conquistador extends Alienigenas {
 
     @Override
     public String toString() {
-        return "Conquistador{" + "pConquistados=" + pConquistados + '}';
+        //return "Conquistador{"+super.toString() + "pConquistados=" + pConquistados + '}';
+        return super.getNombre();
     }
     
     

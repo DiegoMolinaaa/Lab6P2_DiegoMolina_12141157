@@ -31,7 +31,8 @@ public class Cazador extends Alienigenas {
 
     @Override
     public String toString() {
-        return "Cazador{" + "humAtrapados=" + humAtrapados + '}';
+        //return "Cazador{"+super.toString() + "humAtrapados=" + humAtrapados + '}';
+        return super.getNombre();
     }
     
     

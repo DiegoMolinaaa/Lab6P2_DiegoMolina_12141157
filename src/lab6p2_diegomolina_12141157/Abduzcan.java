@@ -31,7 +31,8 @@ public class Abduzcan extends Alienigenas{
 
     @Override
     public String toString() {
-        return "Abduzcan{" + "animalesAb=" + animalesAb + '}';
+        //return "Abduzcan{"+super.toString() + "animalesAb=" + animalesAb + '}';
+        return super.getNombre();
     }
     
     
